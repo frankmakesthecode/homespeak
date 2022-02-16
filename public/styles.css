@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'NotoSans';
+  src: local('NotoSans'), url('./fonts/NotoSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NotoSans Bold';
+  src: local('NotoSans'), url('./fonts/NotoSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NotoSans Italic';
+  src: local('NotoSans'), url('./fonts/NotoSans-Italic.ttf') format('truetype');
+}
+
+:root,
+html,
+body {
+  font-family: NotoSans, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
