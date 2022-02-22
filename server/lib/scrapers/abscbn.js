@@ -25,7 +25,7 @@ const scrapeAbscbn = async () => {
       const elem = document.querySelector('a.section-top1-title-link');
       const headline = {};
       headline.sourceId = 3;
-      headline.title = elem.innerText;
+      headline.title = elem.innerHTML;
       headline.link = elem.href;
 
       const latest = Array.from(
@@ -34,7 +34,7 @@ const scrapeAbscbn = async () => {
         const data = {};
 
         data.sourceId = 3;
-        data.title = elem.innerText;
+        data.title = elem.innerHTML;
         data.link = elem.href;
 
         return data;
