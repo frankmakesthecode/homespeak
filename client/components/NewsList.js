@@ -1,7 +1,7 @@
 import React from 'react';
 import NewsItem from './NewsItem';
 
-const NewsList = ({ source, filter, articles }) => {
+const NewsList = ({ source, articles }) => {
   return (
     <div className="news">
       <div className="source-title">

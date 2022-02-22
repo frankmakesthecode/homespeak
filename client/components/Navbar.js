@@ -3,7 +3,7 @@ import React from 'react';
 const Navbar = () => {
   return (
     <nav>
-      <h3>homespeak</h3>
+      <h3 className="main-header">homespeak</h3>
     </nav>
   );
 };

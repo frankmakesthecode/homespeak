@@ -3,8 +3,19 @@ const handleDuplicates = require('../handleDuplicates');
 
 const scrapePhilstar = async () => {
   try {
+    const chromeOptions = {
+      headless: true,
+      defaultViewport: null,
+      args: [
+        '--incognito',
+        '--no-sandbox',
+        '--single-process',
+        '--no-zygote',
+        '--disable-setuid-sandbox',
+      ],
+    };
     const url = 'https://www.philstar.com/headlines';
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch(chromeOptions);
     const page = await browser.newPage();
     await page.setUserAgent(
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'

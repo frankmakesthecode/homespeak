@@ -23,7 +23,7 @@ const Home = (props) => {
       <div id="search-container">
         <input
           id="search-filter"
-          placeholder="search"
+          placeholder="Search"
           value={searchFilter}
           onChange={handleSearch}
         />
