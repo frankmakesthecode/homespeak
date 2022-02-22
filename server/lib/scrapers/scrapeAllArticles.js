@@ -6,11 +6,11 @@ const scrapeManilaBul = require('./manilaBulletin');
 const scrapeAllArticles = async () => {
   try {
     const rappler = await scrapeRappler();
-    const abscbn = await scrapeAbscbn();
+    // const abscbn = await scrapeAbscbn();
     const philstar = await scrapePhilstar();
     const manilaBulletin = await scrapeManilaBul();
 
-    return [...rappler, ...abscbn, ...philstar, ...manilaBulletin];
+    return [...rappler, ...philstar, ...manilaBulletin];
   } catch (error) {
     console.error(error);
   }
