@@ -22,9 +22,10 @@ const scrapeAbscbn = async () => {
     );
 
     await page.goto(url, {
-      waitUntil: 'networkidle0',
+      waitUntil: 'domcontentloaded',
       timeout: 0,
     });
+
     // await page.screenshot({ fullPage: true, path: 'screenshot.png' });
     // Grab news headlines
     const results = await page.evaluate(() => {
