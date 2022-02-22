@@ -1,5 +1,5 @@
 const scrapeRappler = require('./rappler');
-const scrapeAbscbn = require('./abscbn');
+const scrapeManilaTimes = require('./manilaTimes');
 const scrapePhilstar = require('./philstar');
 const scrapeManilaBul = require('./manilaBulletin');
 const scrapeAllArticles = require('./scrapeAllArticles');
