@@ -5,7 +5,13 @@ const scrapeAbscbn = async () => {
   try {
     const chromeOptions = {
       headless: true,
-      args: ['--disable-setuid-sandbox'],
+      args: [
+        '--incognito',
+        '--no-zygote',
+        '--single-process',
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+      ],
     };
 
     const url = 'https://news.abs-cbn.com/anc/exclusives';
