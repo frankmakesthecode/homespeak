@@ -4,7 +4,8 @@ const handleDuplicates = require('../handleDuplicates');
 const scrapeAbscbn = async () => {
   try {
     const chromeOptions = {
-      headless: false,
+      headless: true,
+      defaultViewport: null,
       args: [
         '--incognito',
         '--no-zygote',
