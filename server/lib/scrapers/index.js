@@ -6,7 +6,7 @@ const scrapeAllArticles = require('./scrapeAllArticles');
 
 module.exports = {
   scrapeRappler,
-  scrapeAbscbn,
+  scrapeManilaTimes,
   scrapePhilstar,
   scrapeManilaBul,
   scrapeAllArticles,
