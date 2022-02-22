@@ -16,7 +16,7 @@ const scrapeAbscbn = async () => {
     );
 
     await page.goto(url, {
-      waitUntil: 'domcontentloaded',
+      waitUntil: 'networkidle0',
       timeout: 0,
     });
     // await page.screenshot({ fullPage: true, path: 'screenshot.png' });
