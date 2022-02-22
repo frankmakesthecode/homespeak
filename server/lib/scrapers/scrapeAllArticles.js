@@ -1,7 +1,8 @@
 const scrapeRappler = require('./rappler');
-const scrapeManilaTimes = require('./abscbn');
+const scrapeManilaTimes = require('./manilaTimes');
 const scrapePhilstar = require('./philstar');
 const scrapeManilaBul = require('./manilaBulletin');
+const handleDuplicates = require('../handleDuplicates');
 
 const scrapeAllArticles = async () => {
   try {
@@ -10,7 +11,12 @@ const scrapeAllArticles = async () => {
     const philstar = await scrapePhilstar();
     const manilaBulletin = await scrapeManilaBul();
 
-    return [...rappler, ...manilaTimes, ...philstar, ...manilaBulletin];
+    return handleDuplicates([
+      ...rappler,
+      ...manilaTimes,
+      ...philstar,
+      ...manilaBulletin,
+    ]);
   } catch (error) {
     console.error(error);
   }

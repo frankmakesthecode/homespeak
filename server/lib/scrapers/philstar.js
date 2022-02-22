@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-const handleDuplicates = require('../handleDuplicates');
 
 const scrapePhilstar = async () => {
   try {
@@ -47,11 +46,8 @@ const scrapePhilstar = async () => {
       return [...headlines, ...latest];
     });
 
-    // Handle Duplicates
-    const news = handleDuplicates(results);
     await browser.close();
-
-    return news;
+    return results;
   } catch (error) {
     console.error(error);
   }

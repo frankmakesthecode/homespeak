@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-const handleDuplicates = require('../handleDuplicates');
 
 const scrapeManilaBul = async () => {
   try {
@@ -31,12 +30,8 @@ const scrapeManilaBul = async () => {
         return data;
       });
     });
-
-    // Handle Duplicates
-    const news = handleDuplicates(results);
     await browser.close();
-
-    return news;
+    return results;
   } catch (error) {
     console.error(error);
   }
