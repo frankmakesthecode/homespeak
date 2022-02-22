@@ -4,7 +4,7 @@ const handleDuplicates = require('../handleDuplicates');
 const scrapeAbscbn = async () => {
   try {
     const chromeOptions = {
-      headless: true,
+      headless: false,
       args: [
         '--incognito',
         '--no-zygote',
@@ -26,7 +26,7 @@ const scrapeAbscbn = async () => {
       timeout: 0,
     });
 
-    // await page.screenshot({ fullPage: true, path: 'screenshot.png' });
+    await page.screenshot({ fullPage: true, path: 'screenshot.png' });
     // Grab news headlines
     const results = await page.evaluate(() => {
       const elem = document.querySelector('a.section-top1-title-link');
