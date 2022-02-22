@@ -3,7 +3,7 @@ const handleDuplicates = require('../handleDuplicates');
 
 const scrapeRappler = async () => {
   try {
-    const url = 'https://www.rappler.com/';
+    const url = 'https://www.rappler.com/section/nation/';
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
     await page.setUserAgent(
