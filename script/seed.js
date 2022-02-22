@@ -15,7 +15,7 @@ async function seed() {
     const sources = await Promise.all([
       Source.create({ id: 1, name: 'Rappler' }),
       Source.create({ id: 2, name: 'Philstar' }),
-      Source.create({ id: 3, name: 'ABS CBN' }),
+      Source.create({ id: 3, name: 'Manila Times' }),
       Source.create({ id: 4, name: 'Manila Bulletin' }),
     ]);
 
