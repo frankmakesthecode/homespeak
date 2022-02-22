@@ -39,19 +39,19 @@ const scrapeAbscbn = async () => {
 
         return data;
       });
-      const related = Array.from(document.querySelectorAll('a.li')).map(
-        (elem) => {
-          const data = {};
+      // const related = Array.from(document.querySelectorAll('a.li')).map(
+      //   (elem) => {
+      //     const data = {};
 
-          data.sourceId = 3;
-          data.title = elem.innerText;
-          data.link = elem.href;
+      //     data.sourceId = 3;
+      //     data.title = elem.innerText;
+      //     data.link = elem.href;
 
-          return data;
-        }
-      );
+      //     return data;
+      //   }
+      // );
 
-      return [headline, ...latest, ...related];
+      return [headline, ...latest];
     });
 
     // Handle Duplicates
