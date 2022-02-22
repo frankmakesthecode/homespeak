@@ -5,7 +5,7 @@ const scrapeAbscbn = async () => {
   try {
     const chromeOptions = {
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      args: ['--disable-setuid-sandbox'],
     };
 
     const url = 'https://news.abs-cbn.com/anc/exclusives';
@@ -39,19 +39,19 @@ const scrapeAbscbn = async () => {
 
         return data;
       });
-      // const related = Array.from(document.querySelectorAll('a.li')).map(
-      //   (elem) => {
-      //     const data = {};
+      const related = Array.from(document.querySelectorAll('a.li')).map(
+        (elem) => {
+          const data = {};
 
-      //     data.sourceId = 3;
-      //     data.title = elem.innerText;
-      //     data.link = elem.href;
+          data.sourceId = 3;
+          data.title = elem.innerText;
+          data.link = elem.href;
 
-      //     return data;
-      //   }
-      // );
+          return data;
+        }
+      );
 
-      return [headline, ...latest];
+      return [headline, ...latest, ...related];
     });
 
     // Handle Duplicates
