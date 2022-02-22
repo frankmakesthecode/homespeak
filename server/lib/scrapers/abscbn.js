@@ -19,7 +19,7 @@ const scrapeAbscbn = async () => {
       waitUntil: 'domcontentloaded',
       timeout: 0,
     });
-    await page.screenshot({ fullPage: true, path: 'screenshot.png' });
+    // await page.screenshot({ fullPage: true, path: 'screenshot.png' });
     // Grab news headlines
     const results = await page.evaluate(() => {
       const elem = document.querySelector('a.section-top1-title-link');
