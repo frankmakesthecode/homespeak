@@ -6,10 +6,12 @@ const handleDuplicates = require('../handleDuplicates');
 
 const scrapeAllArticles = async () => {
   try {
-    const rappler = await scrapeRappler();
-    const manilaTimes = await scrapeManilaTimes();
-    const philstar = await scrapePhilstar();
-    const manilaBulletin = await scrapeManilaBul();
+    const [rappler, manilaTimes, philstar, manilaBulletin] = await Promise.all([
+      scrapeRappler(),
+      scrapeManilaTimes(),
+      scrapePhilstar(),
+      scrapeManilaBul(),
+    ]);
 
     return handleDuplicates([
       ...rappler,

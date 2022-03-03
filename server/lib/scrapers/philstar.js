@@ -19,33 +19,34 @@ const scrapePhilstar = async () => {
     });
 
     const results = await page.evaluate(() => {
-      const headlines = Array.from(
-        document.querySelectorAll('div.carousel__item__title > h3 > a')
-      ).map((elem) => {
-        const data = {};
+      const headlines = Array.from(document.querySelectorAll('h3 > a')).map(
+        (elem) => {
+          const data = {};
 
-        data.sourceId = 2;
-        data.title = elem.innerText;
-        data.link = elem.href;
+          data.sourceId = 2;
+          data.title = elem.innerText;
+          data.link = elem.href;
 
-        return data;
-      });
+          return data;
+        }
+      );
 
-      const latest = Array.from(
-        document.querySelectorAll('div.news_title > a')
-      ).map((elem) => {
-        const data = {};
+      const latest = Array.from(document.querySelectorAll('h2 > a')).map(
+        (elem) => {
+          const data = {};
 
-        data.sourceId = 2;
-        data.title = elem.innerHTML;
-        data.link = elem.href;
+          data.sourceId = 2;
+          data.title = elem.innerHTML;
+          data.link = elem.href;
 
-        return data;
-      });
+          return data;
+        }
+      );
 
       return [...headlines, ...latest];
     });
 
+    console.log(results);
     await browser.close();
     return results;
   } catch (error) {
