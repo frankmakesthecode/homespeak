@@ -46,7 +46,6 @@ const scrapePhilstar = async () => {
       return [...headlines, ...latest];
     });
 
-    console.log(results);
     await browser.close();
     return results;
   } catch (error) {
